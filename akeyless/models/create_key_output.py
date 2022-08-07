@@ -34,24 +34,55 @@ class CreateKeyOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'fragment_results': 'list[int]'
+        'display_id': 'str',
+        'fragment_results': 'list[int]',
+        'item_id': 'int'
     }
 
     attribute_map = {
-        'fragment_results': 'fragment_results'
+        'display_id': 'display_id',
+        'fragment_results': 'fragment_results',
+        'item_id': 'item_id'
     }
 
-    def __init__(self, fragment_results=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, fragment_results=None, item_id=None, local_vars_configuration=None):  # noqa: E501
         """CreateKeyOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._display_id = None
         self._fragment_results = None
+        self._item_id = None
         self.discriminator = None
 
+        if display_id is not None:
+            self.display_id = display_id
         if fragment_results is not None:
             self.fragment_results = fragment_results
+        if item_id is not None:
+            self.item_id = item_id
+
+    @property
+    def display_id(self):
+        """Gets the display_id of this CreateKeyOutput.  # noqa: E501
+
+
+        :return: The display_id of this CreateKeyOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_id
+
+    @display_id.setter
+    def display_id(self, display_id):
+        """Sets the display_id of this CreateKeyOutput.
+
+
+        :param display_id: The display_id of this CreateKeyOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._display_id = display_id
 
     @property
     def fragment_results(self):
@@ -73,6 +104,27 @@ class CreateKeyOutput(object):
         """
 
         self._fragment_results = fragment_results
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this CreateKeyOutput.  # noqa: E501
+
+
+        :return: The item_id of this CreateKeyOutput.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this CreateKeyOutput.
+
+
+        :param item_id: The item_id of this CreateKeyOutput.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
