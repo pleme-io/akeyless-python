@@ -34,24 +34,29 @@ class AccountGeneralSettings(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'data_protection_section': 'DataProtectionSection'
+        'data_protection_section': 'DataProtectionSection',
+        'password_policy': 'PasswordPolicyInfo'
     }
 
     attribute_map = {
-        'data_protection_section': 'data_protection_section'
+        'data_protection_section': 'data_protection_section',
+        'password_policy': 'password_policy'
     }
 
-    def __init__(self, data_protection_section=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data_protection_section=None, password_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._data_protection_section = None
+        self._password_policy = None
         self.discriminator = None
 
         if data_protection_section is not None:
             self.data_protection_section = data_protection_section
+        if password_policy is not None:
+            self.password_policy = password_policy
 
     @property
     def data_protection_section(self):
@@ -73,6 +78,27 @@ class AccountGeneralSettings(object):
         """
 
         self._data_protection_section = data_protection_section
+
+    @property
+    def password_policy(self):
+        """Gets the password_policy of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The password_policy of this AccountGeneralSettings.  # noqa: E501
+        :rtype: PasswordPolicyInfo
+        """
+        return self._password_policy
+
+    @password_policy.setter
+    def password_policy(self, password_policy):
+        """Sets the password_policy of this AccountGeneralSettings.
+
+
+        :param password_policy: The password_policy of this AccountGeneralSettings.  # noqa: E501
+        :type: PasswordPolicyInfo
+        """
+
+        self._password_policy = password_policy
 
     def to_dict(self):
         """Returns the model properties as a dict"""
