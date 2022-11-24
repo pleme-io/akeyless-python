@@ -94,7 +94,7 @@ class RotateSecret(object):
     def name(self):
         """Gets the name of this RotateSecret.  # noqa: E501
 
-        Rotated Secret name  # noqa: E501
+        Secret name (Rotated Secret or Custom Dynamic Secret)  # noqa: E501
 
         :return: The name of this RotateSecret.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class RotateSecret(object):
     def name(self, name):
         """Sets the name of this RotateSecret.
 
-        Rotated Secret name  # noqa: E501
+        Secret name (Rotated Secret or Custom Dynamic Secret)  # noqa: E501
 
         :param name: The name of this RotateSecret.  # noqa: E501
         :type: str

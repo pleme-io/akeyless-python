@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allowed_ops** | **list[str]** |  | [optional] 
 **assocs** | [**list[AuthMethodRoleAssociation]**](AuthMethodRoleAssociation.md) |  | [optional] 
 **auth_method_name** | **str** |  | [optional] 
 
