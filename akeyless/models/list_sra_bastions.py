@@ -34,34 +34,60 @@ class ListSRABastions(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_urls_only': 'bool',
         'json': 'bool',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'allowed_urls_only': 'allowed-urls-only',
         'json': 'json',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_urls_only=None, json=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListSRABastions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allowed_urls_only = None
         self._json = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if allowed_urls_only is not None:
+            self.allowed_urls_only = allowed_urls_only
         if json is not None:
             self.json = json
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def allowed_urls_only(self):
+        """Gets the allowed_urls_only of this ListSRABastions.  # noqa: E501
+
+
+        :return: The allowed_urls_only of this ListSRABastions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allowed_urls_only
+
+    @allowed_urls_only.setter
+    def allowed_urls_only(self, allowed_urls_only):
+        """Sets the allowed_urls_only of this ListSRABastions.
+
+
+        :param allowed_urls_only: The allowed_urls_only of this ListSRABastions.  # noqa: E501
+        :type: bool
+        """
+
+        self._allowed_urls_only = allowed_urls_only
 
     @property
     def json(self):

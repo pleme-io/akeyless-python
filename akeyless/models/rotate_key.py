@@ -36,6 +36,7 @@ class RotateKey(object):
     openapi_types = {
         'json': 'bool',
         'name': 'str',
+        'new_cert_pem_data': 'str',
         'new_key_data': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -44,12 +45,13 @@ class RotateKey(object):
     attribute_map = {
         'json': 'json',
         'name': 'name',
+        'new_cert_pem_data': 'new-cert-pem-data',
         'new_key_data': 'new-key-data',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=None, name=None, new_key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, name=None, new_cert_pem_data=None, new_key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotateKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class RotateKey(object):
 
         self._json = None
         self._name = None
+        self._new_cert_pem_data = None
         self._new_key_data = None
         self._token = None
         self._uid_token = None
@@ -65,6 +68,8 @@ class RotateKey(object):
         if json is not None:
             self.json = json
         self.name = name
+        if new_cert_pem_data is not None:
+            self.new_cert_pem_data = new_cert_pem_data
         if new_key_data is not None:
             self.new_key_data = new_key_data
         if token is not None:
@@ -119,6 +124,29 @@ class RotateKey(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def new_cert_pem_data(self):
+        """Gets the new_cert_pem_data of this RotateKey.  # noqa: E501
+
+        The new pem encoded certificate for the classic key. relevant only for keys provided by user ('bring-your-own-key')  # noqa: E501
+
+        :return: The new_cert_pem_data of this RotateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._new_cert_pem_data
+
+    @new_cert_pem_data.setter
+    def new_cert_pem_data(self, new_cert_pem_data):
+        """Sets the new_cert_pem_data of this RotateKey.
+
+        The new pem encoded certificate for the classic key. relevant only for keys provided by user ('bring-your-own-key')  # noqa: E501
+
+        :param new_cert_pem_data: The new_cert_pem_data of this RotateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._new_cert_pem_data = new_cert_pem_data
 
     @property
     def new_key_data(self):
