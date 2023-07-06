@@ -34,29 +34,55 @@ class EsmUpdateSecretOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'name': 'str',
         'secret_id': 'str',
         'version_id': 'str'
     }
 
     attribute_map = {
+        'name': 'name',
         'secret_id': 'secret_id',
         'version_id': 'version_id'
     }
 
-    def __init__(self, secret_id=None, version_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, secret_id=None, version_id=None, local_vars_configuration=None):  # noqa: E501
         """EsmUpdateSecretOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._name = None
         self._secret_id = None
         self._version_id = None
         self.discriminator = None
 
+        if name is not None:
+            self.name = name
         if secret_id is not None:
             self.secret_id = secret_id
         if version_id is not None:
             self.version_id = version_id
+
+    @property
+    def name(self):
+        """Gets the name of this EsmUpdateSecretOutput.  # noqa: E501
+
+
+        :return: The name of this EsmUpdateSecretOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this EsmUpdateSecretOutput.
+
+
+        :param name: The name of this EsmUpdateSecretOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def secret_id(self):
