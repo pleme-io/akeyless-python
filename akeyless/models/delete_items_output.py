@@ -34,24 +34,76 @@ class DeleteItemsOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'deleted_items': 'list[str]',
+        'failed_deleted_items': 'dict(str, str)',
         'path': 'str'
     }
 
     attribute_map = {
+        'deleted_items': 'deleted_items',
+        'failed_deleted_items': 'failed_deleted_items',
         'path': 'path'
     }
 
-    def __init__(self, path=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, deleted_items=None, failed_deleted_items=None, path=None, local_vars_configuration=None):  # noqa: E501
         """DeleteItemsOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._deleted_items = None
+        self._failed_deleted_items = None
         self._path = None
         self.discriminator = None
 
+        if deleted_items is not None:
+            self.deleted_items = deleted_items
+        if failed_deleted_items is not None:
+            self.failed_deleted_items = failed_deleted_items
         if path is not None:
             self.path = path
+
+    @property
+    def deleted_items(self):
+        """Gets the deleted_items of this DeleteItemsOutput.  # noqa: E501
+
+
+        :return: The deleted_items of this DeleteItemsOutput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._deleted_items
+
+    @deleted_items.setter
+    def deleted_items(self, deleted_items):
+        """Sets the deleted_items of this DeleteItemsOutput.
+
+
+        :param deleted_items: The deleted_items of this DeleteItemsOutput.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._deleted_items = deleted_items
+
+    @property
+    def failed_deleted_items(self):
+        """Gets the failed_deleted_items of this DeleteItemsOutput.  # noqa: E501
+
+
+        :return: The failed_deleted_items of this DeleteItemsOutput.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._failed_deleted_items
+
+    @failed_deleted_items.setter
+    def failed_deleted_items(self, failed_deleted_items):
+        """Sets the failed_deleted_items of this DeleteItemsOutput.
+
+
+        :param failed_deleted_items: The failed_deleted_items of this DeleteItemsOutput.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._failed_deleted_items = failed_deleted_items
 
     @property
     def path(self):
