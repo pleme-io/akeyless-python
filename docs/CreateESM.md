@@ -1,6 +1,6 @@
 # CreateESM
 
-CreateESM is a command that creates an External Secrets Manager
+CreateESM is a command that creates an External Secrets Manager. [Deprecated: Use command create-usc]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
