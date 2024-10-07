@@ -35,6 +35,7 @@ class UpdateClassicKeyCertificate(object):
     """
     openapi_types = {
         'cert_file_data': 'str',
+        'certificate_format': 'str',
         'json': 'bool',
         'name': 'str',
         'token': 'str',
@@ -43,19 +44,21 @@ class UpdateClassicKeyCertificate(object):
 
     attribute_map = {
         'cert_file_data': 'cert-file-data',
+        'certificate_format': 'certificate-format',
         'json': 'json',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, cert_file_data=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_file_data=None, certificate_format=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateClassicKeyCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cert_file_data = None
+        self._certificate_format = None
         self._json = None
         self._name = None
         self._token = None
@@ -64,6 +67,8 @@ class UpdateClassicKeyCertificate(object):
 
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
+        if certificate_format is not None:
+            self.certificate_format = certificate_format
         if json is not None:
             self.json = json
         self.name = name
@@ -94,6 +99,27 @@ class UpdateClassicKeyCertificate(object):
         """
 
         self._cert_file_data = cert_file_data
+
+    @property
+    def certificate_format(self):
+        """Gets the certificate_format of this UpdateClassicKeyCertificate.  # noqa: E501
+
+
+        :return: The certificate_format of this UpdateClassicKeyCertificate.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_format
+
+    @certificate_format.setter
+    def certificate_format(self, certificate_format):
+        """Sets the certificate_format of this UpdateClassicKeyCertificate.
+
+
+        :param certificate_format: The certificate_format of this UpdateClassicKeyCertificate.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_format = certificate_format
 
     @property
     def json(self):
