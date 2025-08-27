@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**azure_enable_batch** | **str** |  | [optional] 
 **azure_workspace_id** | **str** |  | [optional] 
 **azure_workspace_key** | **str** |  | [optional] 
 
