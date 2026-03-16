@@ -11,9 +11,13 @@
       mkPythonPackage = (import "${substrate}/lib/python-package.nix").mkPythonPackage;
     in {
       packages.default = mkPythonPackage pkgs {
-        pname = "akeyless-python";
+        pname = "akeyless";
         version = "0.0.0-dev";
         src = self;
+        pythonImportsCheck = [ "akeyless" ];
+        propagatedBuildInputs = with pkgs.python3Packages; [
+          urllib3 python-dateutil pem certifi six psutil
+        ];
         description = "Akeyless Python SDK - auto-generated Python client for the Akeyless API";
       };
       devShells.default = pkgs.mkShellNoCC {
