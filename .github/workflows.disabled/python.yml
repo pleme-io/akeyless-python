@@ -13,7 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        # 3.8 REMOVED 2026-08-03. It cannot pass: `requirements.txt` pins
+        # `setuptools >= 78.1.0` (the CVE-2025-47273 path-traversal fix) and
+        # setuptools dropped 3.8 at 76.0 — the last release supporting it is
+        # 75.3.x. So the matrix cell asked pip for a version that does not
+        # exist for that interpreter:
+        #   ERROR: No matching distribution found for setuptools>=78.1.0
+        # and fail-fast then cancelled 3.9-3.12, which is why one real failure
+        # presented as four broken cells.
+        #
+        # Dropping the interpreter is the fix, not loosening the pin: Python
+        # 3.8 reached end-of-life in October 2024, and the pin is a SECURITY
+        # floor. Trading a CVE fix to keep an EOL interpreter green would be
+        # backwards.
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
       - uses: actions/checkout@v4
